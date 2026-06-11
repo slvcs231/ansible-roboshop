@@ -1,0 +1,23 @@
+- name: craete ec2 and r53
+  hosts:  local
+  connection: local
+  vars:
+    AMI_ID: "ami-09c813fb71547fc4f"
+    SG_ID:  "ami-09c813fb71547fc4f"
+    ZONE_ID:  "Z0948150OFPSYTNVYZOY"
+    DOMAIN_NAME:  "slvcs.online"
+    instances:
+    - mongodb
+  tasks:
+  - name: create ec2 instance
+    amazon.aws.ec2.instance:
+      name: "{{item}}"
+      instance_type:  t3.micro
+      security_group: "{{SG_ID}}"
+      image_id: "{{ AMI_ID }}"
+      tags:
+        Name: "{{ name }}"
+    loop: "{{ instances }}"
+    register: ec2_output
+    
+
