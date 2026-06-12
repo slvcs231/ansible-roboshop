@@ -1,6 +1,6 @@
 - name: setup mongodb
   hosts:  mongodb
-  become:yes
+  become: yes
   tasks:
   - name: copy mongodb repo
     ansible.builtin.copy:
@@ -10,7 +10,7 @@
   - name: install mongodb server
     ansible.builtin.package:
       name: mongodb-org
-      state:
+      state:  present
 
   - name: enable and start the sevice
     ansible.builtin.service:
@@ -21,4 +21,3 @@
   - name: allow remote connections
     ansible.builtin.replace:
       path: /etc/mongod.conf
-      
