@@ -8,6 +8,8 @@
     domain_name:  "slvcs.online"
     instances:
     - mongodb
+    - rabbitmq
+    - Node2
   tasks:
   - name: create ec2 and r53
     amazon.aws.ec2_instance:
