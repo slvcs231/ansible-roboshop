@@ -1,5 +1,6 @@
 - name: create ec2 and r53
-  hosts:  frontend
+  hosts:  localhost
+  connection: local
   vars:
     ami_id:  ami-09c813fb71547fc4f
     sg_id:  sg-096cdc6ca04cabef9
