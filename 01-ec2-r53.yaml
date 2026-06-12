@@ -2,7 +2,7 @@
   hosts:  localhost
   connection: local
   vars:
-    ami_id:  ami-09c813fb71547fc4f
+    ami_id: ami-0220d79f3f480ecf5 
     sg_id:  sg-096cdc6ca04cabef9
     zone_id:  Z0948150OFPSYTNVYZOY
     domain_name:  "slvcs.online"
