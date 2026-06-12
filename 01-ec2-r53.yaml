@@ -9,7 +9,7 @@
     instances:
     - mongodb
     - rabbitmq
-    - Node2
+    - mysql
   tasks:
   - name: create ec2 and r53
     amazon.aws.ec2_instance:
