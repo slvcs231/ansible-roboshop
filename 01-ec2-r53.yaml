@@ -3,7 +3,7 @@
   connection: local
   vars:
     AMI_ID: "ami-09c813fb71547fc4f"
-    SG_ID:  "ami-09c813fb71547fc4f"
+    SG_ID:  "sg-096cdc6ca04cabef9"
     ZONE_ID:  "Z0948150OFPSYTNVYZOY"
     DOMAIN_NAME:  "slvcs.online"
     instances:
