@@ -1,0 +1,23 @@
+- name: servers creation
+  hosts:  localhost
+  become: yes
+  vars:
+    ami_id: ami-0220d79f3f480ecf5
+    sg_id:  sg-096cdc6ca04cabef9
+    zone_id:  Z0948150OFPSYTNVYZOY
+    domain_name:  "slvcs.online"
+    instances:
+      - redis
+      - catalogue
+      - mysql
+  tasks:
+  - name: create ec2 instances and r53
+    amazon.aws.ec2_instance:
+      name: "{{ item }}"
+      instance_type:  t3.micro
+      security_group: "{{ sg_id }}"
+      image_id: "{{ ami_id }}"
+      tags:
+        Name: "{{ item }}"
+      loop: "{{ instances }}" 
+      register: ec2_output
